@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kampan Labs - Coming Soon</title>
+
+        <link href="style.css" rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=Satoshi:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css"
+            rel="stylesheet"
+        />
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+
+        <style>
+            body {
+                font-family: "IBM Plex Sans", sans-serif;
+                background-color: hsl(var(--background));
+                color: white;
+            }
+
+            h1,
+            h2,
+            h3,
+            button {
+                font-family: "Satoshi", sans-serif;
+            }
+
+            .gradient-text {
+                background: linear-gradient(45deg, #ffffff, #b3b3b3);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+
+            .logo-circle {
+                background: white;
+                border-radius: 9999px;
+                padding: 0.75rem;
+                box-shadow: 0 0 10px #00bfff;
+            }
+
+            .shimmer {
+                background: linear-gradient(
+                    to right,
+                    #ffffff33 0%,
+                    #ffffff88 50%,
+                    #ffffff33 100%
+                );
+                background-size: 200% auto;
+                animation: shimmer 2.5s linear infinite;
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+
+            @keyframes shimmer {
+                to {
+                    background-position: 200% center;
+                }
+            }
+
+            .link-style {
+                color: white;
+                transition: color 0.3s;
+                font-size: 1.25rem;
+            }
+            .link-style:hover {
+                color: #1e3a8a;
+            }
+        </style>
+    </head>
+
+    <body class="min-h-screen bg-black text-white">
+        <div class="relative min-h-screen overflow-hidden">
+            <!-- Vanta.js Background -->
+            <div id="vanta-container" class="absolute inset-0"></div>
+
+            <!-- Main Content -->
+            <main
+                class="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-16 text-center"
+            >
+                <div class="space-y-10">
+                    <!-- Logo Section -->
+                    <div class="animate-float">
+                        <div
+                            class="logo-circle w-40 h-40 mx-auto flex items-center justify-center"
+                        >
+                            <img
+                                src="/assets/kampan_labs_logo_no_text-DVpPMfqG.png"
+                                alt="Kampan Labs Logo"
+                                class="w-32 h-32 object-contain"
+                            />
+                        </div>
+
+                        <h1
+                            class="text-[64px] md:text-[80px] font-extrabold gradient-text mt-6 uppercase tracking-tight"
+                        >
+                            KAMPAN LABS
+                        </h1>
+                        <p class="mt-3 text-lg font-medium">
+                            Echoing innovation from the Himalayas
+                        </p>
+                    </div>
+
+                    <!-- Coming Soon Section -->
+                    <div class="space-y-2">
+                        <h2
+                            class="text-[36px] md:text-[48px] font-extrabold shimmer"
+                        >
+                            Coming Soon
+                        </h2>
+                    </div>
+
+                    <!-- Email Subscription -->
+                    <div class="max-w-md w-full mx-auto">
+                        <form class="flex gap-3 items-center">
+                            <input
+                                type="email"
+                                placeholder="Enter your email"
+                                class="flex-1 px-4 py-3 rounded-lg bg-white text-black placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            />
+                            <button
+                                type="submit"
+                                class="px-6 py-3 bg-gradient-to-r from-blue-900 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-800 hover:to-blue-600 transition"
+                            >
+                                Notify Me
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="flex justify-center gap-8 mt-10 text-lg">
+                        <a
+                            href="https://discord.gg/yourserver"
+                            class="link-style"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a
+                            href="https://github.com/kampanlabs"
+                            class="link-style"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a
+                            href="mailto:contact@kampanlabs.com"
+                            class="link-style"
+                        >
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Scripts -->
+        <script>
+            VANTA.WAVES({
+                el: "#vanta-container",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.0,
+                minWidth: 200.0,
+                scale: 1.0,
+                scaleMobile: 1.0,
+                color: 0x70709,
+                shininess: 10.0,
+                waveHeight: 5.0,
+                waveSpeed: 1.1,
+            });
+        </script>
+    </body>
+</html>
