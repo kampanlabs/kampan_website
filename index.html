@@ -124,10 +124,12 @@
 
                     <!-- Email Subscription -->
                     <div class="max-w-md w-full mx-auto">
-                        <form class="flex gap-3 items-center">
+                        <form id="emailForm" class="flex gap-3 items-center">
                             <input
                                 type="email"
+                                id="emailInput"
                                 placeholder="Enter your email"
+                                required
                                 class="flex-1 px-4 py-3 rounded-lg bg-white text-black placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
                             />
                             <button
@@ -167,6 +169,32 @@
                 </div>
             </main>
         </div>
+
+        <!-- Email Subscription -->
+        <script>
+            const form = document.getElementById("emailForm");
+            const input = document.getElementById("emailInput");
+
+            form.addEventListener("submit", async function (e) {
+                e.preventDefault();
+                const email = input.value;
+                const scriptURL =
+                    "https://script.google.com/macros/s/AKfycbzoCinz1riXxd2J0Uu8DlkEwHnKQy1a1uvvQw5rpawudBxMZI7X4Qf_rGDlaWlo3APg-Q/exec";
+                try {
+                    await fetch(scriptURL, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded",
+                        },
+                        body: new URLSearchParams({ email }),
+                    });
+                    alert("You’ll be notified soon!");
+                    input.value = ""; // reset input
+                } catch (err) {
+                    alert("Failed to submit. Please try again later.");
+                }
+            });
+        </script>
 
         <!-- Scripts -->
         <script>
